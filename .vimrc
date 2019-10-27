@@ -20,6 +20,9 @@ Plugin 'nvie/vim-flake8'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
+" requirements: sudo apt install powerline python3-powerline
+Plugin 'vim-airline/vim-airline'
+
 
 "COLORS
 Plugin 'jnurmine/Zenburn'
@@ -60,7 +63,7 @@ set encoding=utf-8
 let python_highlight_all=1
 syntax on
 
-" CONFIG PLUGINS: [
+" CONFIG PLUGINS: {
 
 "" 'jnurmine/Zenburn'
 "colorscheme zenburn
@@ -100,7 +103,11 @@ let g:EasyMotion_use_smartsign_us = 1 " Smartsign (type `3` and match `3`&`#`)
 nmap s <Plug>(easymotion-s)
     " `s<CR>` repeat last find motion.
 
-" CONFIG PLUGINS: ]
+
+"" 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+
+" CONFIG PLUGINS: }
 
 
 
