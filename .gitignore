@@ -1,0 +1,13 @@
+# Arquivos para ignorar
+*~
+*.swp
+*.pyc
+*.tar.gz
+geckodriver.log
+geckodriver
+
+# Pastas para ignorar
+## Ambiente virtual
+venv/
+## IDE PyCharm
+.idea/
