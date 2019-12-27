@@ -36,25 +36,25 @@ filetype plugin indent on    " required
 
 
 " cleyrandal
-set nu hls incsearch nowrap scrolloff=10
+set nu hls incsearch nowrap scrolloff=50 cursorline
 map - $
     " minus key go to end of the line as `$`
 
 " PEP 8
-au BufNewFile, BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-"    \ set foldmethod=indent
+au FileType python setlocal
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+"    \ foldmethod=indent
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au FileType html,css setlocal
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
 " UTF-8 Support
 set encoding=utf-8
