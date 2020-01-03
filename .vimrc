@@ -13,22 +13,28 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
+Plugin 'jnurmine/Zenburn'
+Plugin 'tomasr/molokai'
+
 Plugin 'pseewald/vim-anyfold'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'cohama/lexima.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " requirements: sudo apt install powerline python3-powerline
 Plugin 'vim-airline/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
 
+"Plugin 'shougo/deoplete.nvim'
 
-"COLORS
-Plugin 'jnurmine/Zenburn'
-Plugin 'tomasr/molokai'
-
-" ...
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,7 +42,19 @@ filetype plugin indent on    " required
 
 
 " cleyrandal
-set nu hls incsearch nowrap scrolloff=50 cursorline
+set nu 
+    \ hls 
+    \ incsearch 
+    \ nowrap 
+    \ scrolloff=10 
+    \ cursorline
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+"    \ expandtab "tab to spaces
+    \ autoindent
+    \ fileformat=unix
 map - $
     " minus key go to end of the line as `$`
 
@@ -57,7 +75,7 @@ au FileType html,css setlocal
     \ shiftwidth=2
 
 " UTF-8 Support
-set encoding=utf-8
+set encoding=UTF-8
 
 " Syntax Checking/Highlighting
 let python_highlight_all=1
@@ -99,7 +117,6 @@ map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1 " type `l` and match `l`&`L`
 let g:EasyMotion_use_smartsign_us = 1 " Smartsign (type `3` and match `3`&`#`)
-
 nmap s <Plug>(easymotion-s)
     " `s<CR>` repeat last find motion.
 
@@ -107,6 +124,16 @@ nmap s <Plug>(easymotion-s)
 "" 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 
+"" 'scrooloose/nerdtree'
+map <F3> :NERDTreeToggle<CR>
+
+"" 'sirver/ultisnips'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 " CONFIG PLUGINS: }
 
 
