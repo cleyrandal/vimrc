@@ -57,6 +57,9 @@ set nu
     \ fileformat=unix
 map - $
     " minus key go to end of the line as `$`
+nmap o o<Esc>k
+	" 'o' key on normal mode add a line above the current line without go to
+	" insert mode.
 
 " PEP 8
 au FileType python setlocal
