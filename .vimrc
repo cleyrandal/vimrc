@@ -25,6 +25,7 @@ Plugin 'plytophogy/vim-virtualenv'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mattn/emmet-vim'
 
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -46,7 +47,7 @@ set nu
     \ hls 
     \ incsearch 
     \ nowrap 
-    \ scrolloff=10 
+"   \ scrolloff=10 
     \ cursorline
     \ tabstop=4
     \ softtabstop=4
@@ -57,9 +58,10 @@ set nu
     \ fileformat=unix
 map - $
     " minus key go to end of the line as `$`
-nmap o o<Esc>k
+"nmap o o<Esc>k
 	" 'o' key on normal mode add a line above the current line without go to
 	" insert mode.
+		" I didn't adapt
 
 " PEP 8
 au FileType python setlocal
