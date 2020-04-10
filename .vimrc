@@ -13,7 +13,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-Plugin 'jnurmine/Zenburn'
 Plugin 'tomasr/molokai'
 
 Plugin 'pseewald/vim-anyfold'
@@ -22,11 +21,13 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'plytophogy/vim-virtualenv'
+Plugin 'glench/vim-jinja2-syntax'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 
+Plugin 'ervandew/supertab'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -47,15 +48,15 @@ set nu
     \ hls 
     \ incsearch 
     \ nowrap 
-"   \ scrolloff=10 
-    \ cursorline
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
     \ textwidth=79
-"    \ expandtab "tab to spaces
     \ autoindent
     \ fileformat=unix
+	\ cursorline
+	\ cursorcolumn
+
 map - $
     " minus key go to end of the line as `$`
 "nmap o o<Esc>k
@@ -88,9 +89,6 @@ syntax on
 
 " CONFIG PLUGINS: {
 
-"" 'jnurmine/Zenburn'
-"colorscheme zenburn
-
 "" 'tomasr/molokai'
 let g:molokai_original = 1
 colorscheme molokai
@@ -117,6 +115,11 @@ let g:ycm_autoclose_preview_window_after_completion=1
     " The auto-complete window goes away when you’re done with it.
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
     " Defines a shortcut for goto definition.
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 
 "" 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -133,12 +136,13 @@ let g:airline_powerline_fonts = 1
 map <F3> :NERDTreeToggle<CR>
 
 "" 'sirver/ultisnips'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 " CONFIG PLUGINS: }
 
 
