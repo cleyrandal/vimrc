@@ -88,4 +88,39 @@ python3 install.py --clang-completer --java-completer
 
 That's it. You're done. Refer to the User Guide section on how to use YCM. Don't forget that if you want the C-family semantic completion engine to work, you will need to provide the compilation flags for your project to YCM. It's all in the User Guide.
 
+
+## Configure Molokai colors
+
+1. Make a backup and open the file `molokai.vim`:
+
+```shell
+$ cd ~/.vim/bundle/molokai/colors/
+$ cp molokai.vim molokai.vim.original
+$ vim molokai.vim
+```
+
+2. The examples below follow the pattern:
+
+```
+from: duplicate and comment this line
+to:   the desired result
+```
+
+Make the following substitutions:
+
+```
+"  hi Visual                      ctermbg=235
+   hi Visual                                    cterm=reverse
+```
+
+```
+"  hi CursorColumn                ctermbg=236
+   hi CursorColumn                ctermbg=238
+```
+
+```
+"      hi CursorLine               ctermbg=236   cterm=none
+       hi CursorLine               ctermbg=238   cterm=none
+```
+
 # FIM
