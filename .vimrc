@@ -31,12 +31,11 @@ Plugin 'ervandew/supertab'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'vimwiki/vimwiki'
+
 " requirements: sudo apt install powerline python3-powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
-
-"Plugin 'shougo/deoplete.nvim'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,6 +62,9 @@ map - $
 	" 'o' key on normal mode add a line above the current line without go to
 	" insert mode.
 		" I didn't adapt
+
+set listchars+=space:.
+set listchars+=tab:^_
 
 " PEP 8
 au FileType python setlocal
