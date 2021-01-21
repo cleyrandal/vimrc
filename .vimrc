@@ -32,6 +32,7 @@ Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 
 Plugin 'vimwiki/vimwiki'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 " requirements: sudo apt install powerline python3-powerline
 Plugin 'vim-airline/vim-airline'
@@ -144,6 +145,23 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"" 'vimwiki/vimwiki'
+" https://github.com/vimwiki/vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+" vimwiki with markdown support
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" helppage -> :h vimwiki-syntax
+
+"" 'suan/vim-instant-markdown' - Instant Markdown previews fom Vim
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0
+map <leader>md :InstantMarkdownPreview<CR>
+"let g:instant_markdown_browser = "firefox --new-window"
+
+
 
 " CONFIG PLUGINS: }
 

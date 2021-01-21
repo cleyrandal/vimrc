@@ -4,7 +4,7 @@ My Vim configuration with Vundle plugins.
 
 ## Install vim with gtk (vim with GUI)
 ```bash
-$ sudo apt isntall vim-gtk
+$ sudo apt install vim-gtk
 ```
 
 ## Install Vundle
@@ -78,12 +78,6 @@ to call for help, try
 
 ```bash
 python3 install.py --help
-```
-
-In my case, only **C** and **java** are available:
-
-```bash
-python3 install.py --clang-completer --java-completer
 ```
 
 That's it. You're done. Refer to the User Guide section on how to use YCM. Don't forget that if you want the C-family semantic completion engine to work, you will need to provide the compilation flags for your project to YCM. It's all in the User Guide.
